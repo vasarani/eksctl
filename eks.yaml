@@ -8,7 +8,7 @@ metadata:
 
 managedNodeGroups:
    - name: Spot
-     instanceTypes: ["t3.medium","c4.large","c5.large","c5d.large","c5n.large","c5a.large"]
+     instanceTypes: ["c3.large","c4.large","c5.large","c5d.large","c5n.large","c5a.large"]
      spot: true
      desiredCapacity: 2
    
