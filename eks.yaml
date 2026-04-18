@@ -3,14 +3,45 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-    name: roboshop
-    region: us-east-1
+  name: roboshop
+  region: us-east-1
 
 availabilityZones: ["us-east-1a", "us-east-1b", "us-east-1c"]
 
 managedNodeGroups:
-   - name: Spot
-     instanceTypes: ["c3.large","c4.large","c5.large","c5d.large","c5n.large","c5a.large","t3.medium", "t3.large", "m5.large", "m5a.large"]
-     spot: true
-     desiredCapacity: 2
+  - name: Spot
+    capacityType: SPOT
+    instanceTypes:
+      - c5.large
+      - c5a.large
+      - c6a.large
+      - t3.medium
+      - t3.large
+      - t3a.large
+      - t3a.medium
+      - m5.large
+      - m5a.large
+    desiredCapacity: 1
+    minSize: 1
+    maxSize: 3
+
+#     # Spot instances
+# apiVersion: eksctl.io/v1alpha5
+# kind: ClusterConfig
+
+# metadata:
+#     name: roboshop
+#     region: us-east-1
+
+# availabilityZones: ["us-east-1a", "us-east-1b", "us-east-1c"]
+
+# managedNodeGroups:
+#    - name: Spot
+#      capacityType: SPOT
+#      instanceTypes: ["c5.large","c5a.large","c6a.large","t3.medium","t3.large","t3a.large","t3a.medium","m5.large", "m5a.large"]
+#      spot: true
+#      desiredCapacity: 1
+#      minSize: 1
+#      maxSize: 3
+   
    
