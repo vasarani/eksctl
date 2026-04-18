@@ -6,9 +6,11 @@ metadata:
     name: roboshop
     region: us-east-1
 
+availabilityZones: ["us-east-1a", "us-east-1b", "us-east-1c"]
+
 managedNodeGroups:
    - name: Spot
-     instanceTypes: ["t3.medium", "t3.large", "m5.large", "m5a.large"]
+     instanceTypes: ["c3.large","c4.large","c5.large","c5d.large","c5n.large","c5a.large","t3.medium", "t3.large", "m5.large", "m5a.large"]
      spot: true
      desiredCapacity: 2
    
